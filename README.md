@@ -4,15 +4,23 @@ The program does the following:
   1. Prompts the user to enter an integer.
   2. Checks whether the number is positive. It should also be no more than 4,294,967,295.
   3. If not, the program displays a message about the invalid number and terminates.
-  4. Sets a string variable to the empty string.
-  5. Creates a temporary variable with an initial value equal to the number entered from the keyboard.
-  6. The loop with precondition is executed:
-     a) The variable's value is compared to zero. If it is greater than zero, the loop continues executing; otherwise, it terminates (Go to step 7).
-     b) The remainder of dividing the value of the temporary variable by 8 is calculated.
-     c) It is translated into a string (symbol). This symbol is added to the end of the string that was declared in point 4.
-     d) The temporary variable is divided by 8.
-  7. If the string remains empty after the loop completes, it is replaced with the character "0".
-  8. The entered number and its binary number (the string that was declared in point 4) are displayed on the screen.
+  4. Requests the format of the letters in a hexadecimal number: uppercase (capital) and lowercase (small).
+  5. Sets a string variable to the empty string.
+  6. Creates a temporary variable with an initial value equal to the number entered from the keyboard.
+  7. The loop with precondition is executed:
+     a) The variable's value is compared to zero. If it is greater than zero, the loop continues executing; otherwise, it terminates (Go to step 6).
+     b) The remainder of dividing the value of the temporary variable by 16 is calculated.
+     c) It is translated as a symbol. The symbol code is calculated according to the following rules:
+        Case 1. The remainder of a decimal fraction between 0 and 9 when divided by 16.
+                The formula used is: symbol code "0" (number "48") + remainder of a decimal fraction between 16.
+        Case 2. The remainder of a decimal fraction between 10 and 15 when divided by 16. Hexadecimal letter format: uppercase.
+                The formula used is: symbol code "A" (number "65") + remainder of a decimal fraction between 16 and 10.
+        Case 3. The remainder of a decimal fraction between 10 and 15 when divided by 16. Hexadecimal letter format: lowercase.
+                The formula used is: symbol code "a" (number "97") + remainder of a decimal fraction between 16 and 10.
+        This symbol is added to the end of the string that was declared in point 5.
+     d) The temporary variable is divided by 16.
+  8. If the string remains empty after the loop completes, it is replaced with the character "0".
+  9. The entered number and its hexadecimal number (the string that was declared in point 5) are displayed on the screen.
 Developed in the Microsoft Visual Studio integrated environment.
 
 DecToHex. Занятия по C++. ИС Visual Studio. Простой Ввод/Вывод. Алгоритмы. Строки. Платформа Windows. Консольное приложение. 
